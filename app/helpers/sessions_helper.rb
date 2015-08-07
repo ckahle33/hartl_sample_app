@@ -4,6 +4,7 @@ module SessionsHelper
 	end
 
   def remember(user)
+    puts "inside SessionsHelper.remember"
     user.remember
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
