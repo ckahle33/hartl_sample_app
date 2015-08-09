@@ -11,6 +11,7 @@ module SessionsHelper
   end
 
 	def current_user
+    p "inside SessionsHelper.current_user"
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id  = cookies.signed[:user_id]) 
